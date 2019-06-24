@@ -42,11 +42,11 @@ export class NewTeamPage {
       foundation: [''],
       coach: [''],
       stadium:[''],
-      stars_player: this.formBuilder.group({
+      /*stars_player: this.formBuilder.group({
         stars_player1: [''],
         stars_player2: [''],
         stars_player3: ['']
-      }),
+      }),*/
       image_url:['']
     });
   }
