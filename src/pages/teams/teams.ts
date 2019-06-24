@@ -17,9 +17,11 @@ import { ListPage } from '../list/list';
 })
 export class TeamsPage {
   team: any;
+  player = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private teamProvider: TeamsProvider) {
     this.team = this.navParams.get("team");
+    this.player = this.navParams.get("player");
   }
 
   ionViewDidLoad() {

@@ -31,8 +31,8 @@ export class ListPage {
   getTeam(_id: any) {
     this.teamProvaider.getTeam(_id).subscribe((result: any) =>{
       this.team = result;
-      this.player = result.player;
-      console.log(result.player);
+      this.player = result.stars_player;
+      console.log(result.stars_player);
       this.navCtrl.push(TeamsPage, {
         "team": this.team,
         "player": this.player 
