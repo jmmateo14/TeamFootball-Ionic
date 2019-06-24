@@ -10,31 +10,31 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="myList" padding>
+<ion-content class="newTeam" padding>
     <form [formGroup]="teamForm" (ngSubmit)="saveData()" class="teamForm" >
     
         <ion-list>
-          <p> Name </p>
+          <h2> Name </h2>
           <ion-item>  
             <ion-input formControlName="name" type="text" placeholder="Name of the team" value=""></ion-input>
           </ion-item>
     
-          <p> Country </p>
+          <h2> Country </h2>
           <ion-item>
             <ion-input formControlName="country" type="text" placeholder="Country" value=""></ion-input>
           </ion-item>
     
-          <p> Date foundation </p>
+          <h2> Date foundation </h2>
           <ion-item>
             <ion-input formControlName="foundation" type="text" placeholder="Date foundation" value=""></ion-input>
           </ion-item>
     
-          <p> Coach </p>
+          <h2> Coach </h2>
           <ion-item>
             <ion-input formControlName="coach" type="text" placeholder="Coach" value=""></ion-input>
           </ion-item>
 
-          <p>Stadium</p>
+          <h2>Stadium</h2>
           <ion-item>
             <ion-textarea formControlName="stadium" type="text" placeholder="Stadium" value=""></ion-textarea>
           </ion-item>
@@ -55,7 +55,7 @@
           </ion-item>
         </div>
 
-          <p>URL Image</p>
+          <h2>URL Image</h2>
           <ion-item>
             <ion-textarea formControlName="image_url" type="text" placeholder="URL for the image" value=""></ion-textarea>
           </ion-item>

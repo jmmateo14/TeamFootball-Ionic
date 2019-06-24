@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TeamsProvider } from '../../providers/teams/teams';
+import { ListPage } from '../list/list';
 
 /**
  * Generated class for the TeamsPage page.
@@ -14,12 +16,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'teams.html',
 })
 export class TeamsPage {
+  team: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private teamProvider: TeamsProvider) {
+    this.team = this.navParams.get("team");
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TeamsPage');
   }
+
+  deleteTeam(_id: any){
+    this.teamProvider.delTeam(_id).subscribe((result: any) =>{
+      this.deleteTeam = result;
+      this.navCtrl.push(ListPage,{})
+  })
+}
 
 }

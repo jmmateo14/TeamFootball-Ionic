@@ -6,10 +6,34 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>teams</ion-title>
+    <ion-title>Team Football</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+    <div class="diskBox">
+        <img src="{{ team.image_url }}" alt="" style="width:250px; height:250px;">
+        
+        <h1>{{ team.name }}</h1>
+        <p>Fecha de fundación: {{ team.foundation }}</p>
+        <p>Pais: {{ team.country }}</p>
+        <p>Entrenador: {{ team.coach }}</p>
+        <p> Estadio: {{ team.stadium }}</p>
+        <div>
+          <h3>Start Player</h3>
+          <ul>
+            <li class=""
+                      *ngFor="let play of player">
+              {{ play }}
+    
+            </li>
+          </ul>
+        </div>
+        <div class="pull-right">
+            <button ion-button light (click)="deleteTeam(team._id)" > Trash </button>
+        </div>
+      </div>
+      <p style="height: 50px;">
+    
+      </p>
 </ion-content>
