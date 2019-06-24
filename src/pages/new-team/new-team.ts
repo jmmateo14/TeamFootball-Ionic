@@ -29,7 +29,7 @@ export class NewTeamPage {
   saveData() {
     this.teamProvider.saveTeam(this.teamForm.value).subscribe((result: any) => {
       this.team = result;
-      //console.log(this.disk);
+      console.log(this.team);
       this.navCtrl.push(ListPage,{})
     })
   }

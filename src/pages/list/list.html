@@ -11,7 +11,7 @@
 </ion-header>
 
 <ion-content class= "myList" padding>
-    <ion-list class="list" style="padding-top: 20px"> <!-- revisar estructura del foreach  -->
+    <ion-list class="list" style="padding-top: 20px">
       <button class="list-group-item"
               *ngFor="let team of teams" 
               (click)="getTeam(team._id)">

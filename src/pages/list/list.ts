@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TeamsProvider } from '../../providers/teams/teams';
 
 /**
  * Generated class for the ListPage page.
@@ -15,7 +16,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ListPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  teams = [];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private teamProvaider: TeamsProvider) {
+    teamProvaider.getTeams().subscribe((result: any) => {
+      this.teams = result;
+      console.log(result);
+    })
   }
 
   ionViewDidLoad() {
