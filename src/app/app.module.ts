@@ -7,9 +7,15 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { TeamsPage } from '../pages/teams/teams';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { TeamsProvider } from '../providers/teams/teams';
+import { HttpClientModule } from '@angular/common/http';
+import { ListPage } from '../pages/list/list';
+import { NewTeamPage } from '../pages/new-team/new-team';
+
 
 @NgModule({
   declarations: [
@@ -17,11 +23,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    TeamsPage,
+    ListPage,
+    NewTeamPage
+    
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -29,12 +40,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    TeamsPage,
+    ListPage,
+    NewTeamPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    TeamsProvider
   ]
 })
 export class AppModule {}

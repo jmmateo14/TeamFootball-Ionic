@@ -1,0 +1,82 @@
+<!--
+  Generated template for the NewTeamPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>New Team</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="myList" padding>
+    <form [formGroup]="teamForm" (ngSubmit)="saveData()" class="teamForm" >
+    
+        <ion-list>
+          <p> Name </p>
+          <ion-item>  
+            <ion-input formControlName="name" type="text" placeholder="Name of the team" value=""></ion-input>
+          </ion-item>
+    
+          <p> Country </p>
+          <ion-item>
+            <ion-input formControlName="country" type="text" placeholder="Country" value=""></ion-input>
+          </ion-item>
+    
+          <p> Date foundation </p>
+          <ion-item>
+            <ion-input formControlName="foundation" type="text" placeholder="Date foundation" value=""></ion-input>
+          </ion-item>
+    
+          <p> Coach </p>
+          <ion-item>
+            <ion-input formControlName="coach" type="text" placeholder="Coach" value=""></ion-input>
+          </ion-item>
+
+          <p>Stadium</p>
+          <ion-item>
+            <ion-textarea formControlName="stadium" type="text" placeholder="Stadium" value=""></ion-textarea>
+          </ion-item>
+    
+          <h2>Stars Player</h2>
+          <div formGroupName="stars_player">
+          <p>Player 1</p>
+          <ion-item>
+            <ion-input formControlName="stars_player1" type="text" placeholder="Player 1" value=""></ion-input>
+          </ion-item>
+          <p>Player 2</p>
+          <ion-item>
+            <ion-input formControlName="stars_player2" type="text" placeholder="Player 2" value=""></ion-input>
+          </ion-item>
+          <p>Player 3</p>
+          <ion-item>
+            <ion-input formControlName="stars_player3" type="text" placeholder="Player 3" value=""></ion-input>
+          </ion-item>
+        </div>
+
+          <p>URL Image</p>
+          <ion-item>
+            <ion-textarea formControlName="image_url" type="text" placeholder="URL for the image" value=""></ion-textarea>
+          </ion-item>
+    
+    
+    
+        </ion-list>
+    
+        <div padding>
+          <button
+          ion-button
+          block
+          type="submit"
+          [disabled]="!teamForm.valid">
+            Add new Team
+          </button>
+        </div>
+      </form>
+    
+      <p style="height: 50px;">
+    
+      </p>
+
+</ion-content>
